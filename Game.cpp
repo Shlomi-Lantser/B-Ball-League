@@ -53,9 +53,19 @@ Game::Game(Team *home, Team *away)
         }
         else
         { 
-            this->winner = this->home;
-            this->loser = this->away;
-            this->game_ending();
+            if (this->home->totalWins - this->home->totalLosses > this->away->totalWins - this->away->totalLosses){
+                this->winner = this->home;
+                this->loser = this->away;
+                this->game_ending();
+            }else if (this->home->totalWins - this->home->totalLosses < this->away->totalWins - this->away->totalLosses){
+                this->winner = this->away;
+                this->loser = this->home;
+                this->game_ending();
+            }else {
+                this->winner = this->home;
+                this->loser = this->away;
+                this->game_ending();
+            }
         }
     }
 }
