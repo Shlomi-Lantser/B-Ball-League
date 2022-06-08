@@ -39,20 +39,23 @@ Game::Game(Team *home, Team *away)
     }
     else
     {
-        if (this->home->totalScore > this->away->totalScore)
+        if (this->home->totalScore - this->home->againstScore > this->away->totalScore - this->away->againstScore)
         {
             this->winner = this->home;
             this->loser = this->away;
             this->game_ending();
         }
-        else if (this->home->totalScore < this->away->totalScore)
+        else if (this->home->totalScore - this->home->againstScore < this->away->totalScore - this->away->againstScore)
         {
             this->winner = this->away;
             this->loser = this->home;
             this->game_ending();
         }
         else
-        { // Needs to complete when draw.
+        { 
+            this->winner = this->home;
+            this->loser = this->away;
+            this->game_ending();
         }
     }
 }
