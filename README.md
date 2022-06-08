@@ -12,7 +12,7 @@ Classes on this project :
 * **Team** - This class represents team with a unique name and talent that given by random.
 
 * **Game** - Implementation of the game , the game has 2 teams , the teams get random points and the one got more points from the other wins , in order in case of a "draw" 
-we will check who has the bigger points vs against point difference and this team will win , if their difference is equal we will give the win for the home team.
+we will check who has the bigger points vs against point difference and this team will win , if their difference is equal we will check the difference between total wins and total lose , if this also equal we will give the win for the home team !
                   
 * **League** - The league class represents the league , the league contains dataBase of teams name to randomize team in case of the user puts less than 20 teams
 and the final teams data-structor that store all the information about the league.
